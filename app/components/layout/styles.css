@@ -1,3 +1,11 @@
-body {
-  background: grey;
+@font-face {
+  font-family: 'AvenirRegular';
+  src: url('../../assets/fonts/AvenirNextLTPro-Regular.otf');
 }
+
+body {
+  font-family: 'AvenirRegular';
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+

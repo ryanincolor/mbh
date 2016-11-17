@@ -11,7 +11,8 @@ process.env.BABEL_ENV = TARGET;
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
-  build: path.join(__dirname, 'build')
+  build: path.join(__dirname, 'build'),
+  images: path.join(__dirname, 'app/assets/images')
 };
 
 const common = {
@@ -30,7 +31,7 @@ const common = {
   plugins: [
     new HtmlWebpackPlugin({
       template: require('html-webpack-template'),
-      title: 'Portfolio of Ryan Pittman',
+      title: 'M A D E b y H U M A N',
       appMountId: 'root',
       inject: false
     })
@@ -45,6 +46,21 @@ const common = {
       },
       { test: /\.json$/, 
         loader: 'json' 
+      },
+      {
+        test: /\.(jpg|png)$/,
+        loader: 'url?limit=25000',
+        include: PATHS.images
+      },
+      {
+        test: /\.svg$/,
+        loader: 'file',
+        include: PATHS.images
+      },
+      {
+        test: /\.otf$/,
+        loader: 'url?limit=50000',
+        include: PATHS.fonts
       }
     ]
   }
