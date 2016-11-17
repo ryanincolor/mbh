@@ -11,7 +11,12 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home">
-      Sup
+        <section className="featured">
+          <img src="images/feature_orphanking.png" />
+        </section>
+        <section className="about">
+        </section>
+        <footer></footer>
       </div>
     )
   }
