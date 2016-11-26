@@ -72,11 +72,32 @@
   align-items: center;
 }
 
+@media (max-width: 600px) {
+  .artistBanner {
+    width: 100%;
+  }
+}
+
+.soundcloudPlayer {
+  position: absolute;
+  width: 1000px;
+  bottom: 50px;
+}
+
+.soundcloudPlayer .widget {
+  border:none !important;
+  box-shadow: none !important;
+}
+
+.soundcloudPlayer .g-background-default {
+    background-color: red;
+  }
+
 .artistBanner:before {
   content: "";
   position: absolute;
   bottom:0px;
-  width: 1000px;
+  width: 940px;
   justify-content: space-between;
   min-height: 96px;
   display: flex;
@@ -130,5 +151,6 @@
 .textBlock:first-child {
   margin-right: 64px;
 }
+
 
 
