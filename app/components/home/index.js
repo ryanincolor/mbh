@@ -1,19 +1,36 @@
 import React from "react";
 import styles from './styles.css';
 import { Link } from 'react-router';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import classNames from 'classnames/bind';
+
+let cx = classNames.bind(styles);
+
+import SoundCloudPlayer from '../soundCloudPlayer';
+import About from '../about';
 
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      showPlayer: false
     }
   }
 
+  onClick() {
+    this.setState({ showPlayer: !this.state.showPlayer });
+  }
   render() {
+    const playClassNames = cx({
+      'play': 'play',
+      'play-active' : this.state.showPlayer,
+    })
+
     return (
       <div className="home">
         <section className={styles.hero}>
+            <p className={styles.fullsite}> Full site soon </p>
             <div className={styles.header}>
               <div className={styles.brand}>
                 <Link to="/">
@@ -22,40 +39,28 @@ class Home extends React.Component {
                 <p>Label & design studio.</p>
               </div>
               <ul className={styles.social}>
-                <li><a href="/">FCBK</a></li>
-                <li><a href="/">SNDCLD</a></li>
-                <li><a href="/">TWTR</a></li>
-                <li><a href="/">EML</a></li>
+                <li><a href="https://www.facebook.com/madebyhumann/" target="_blank">FCBK</a></li>
+                <li><a href="https://soundcloud.com/madebyhumanrecords" target="_blank">SNDCLD</a></li>
+                <li><a href="https://twitter.com/madebyhuman_" target="_blank">TWTR</a></li>
+                <li><a href="mailto:hello@ryanpittman.com">EML</a></li>
               </ul>
             </div>
             <div className={styles.featured}>
               <div className={styles.coverphoto}>
                 <img src={require('../../assets/images/feature_orphanking.png')} />
               </div>
-               <div className={styles.soundcloudPlayer}><iframe width="100%" height="180" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/294719977&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false"></iframe>
-               </div>
-              <div className={styles.artistBanner}>
-                <span className={styles.artistName}>Orphan King - <span>Affair Ep</span></span>
-                <span className={styles.play}></span>
+              <div className={styles.player}>
+
+                {this.state.showPlayer ? <SoundCloudPlayer showPlayer={this.state.showPlayer} /> : null}
+                <div className={styles.artistBanner} onClick={this.onClick.bind(this)}>
+                  <span className={styles.artistName}>Orphan King - <span>Affair Ep</span></span>
+                  <span className={playClassNames} ></span>
+                </div>
+                <p className={styles.artistBannerSubtext}>Available on <a href="http://soundcloud.com/orphanking">Soundcloud</a></p>
               </div>
-              <p className={styles.artistBannerSubtext}>Available on <a href="#">Soundcloud</a> &  <a href="#">Spotify</a>.</p>
             </div>
         </section>
-        <section className={styles.about}>
-          <h2>Music For Cannibals</h2>
-          <div className={styles.textColumns}>
-            <div className={styles.textBlock}>
-              <p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            </div>
-            <div className={styles.textBlock}>
-              <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus.</p>
-            </div>
-          </div>
-
-
-
-        </section>
-        <footer></footer>
+        <About />
       </div>
     )
   }

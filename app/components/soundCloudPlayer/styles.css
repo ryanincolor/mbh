@@ -1,0 +1,33 @@
+.soundcloudPlayer {
+  width: 100%;
+  position: relative;
+  bottom: -4px;
+  background: white;
+  z-index: -1;
+
+}
+
+.soundcloudPlayer-visible {
+  animation-duration: 100ms;
+  animation-name: slidein;
+   -webkit-animation-fill-mode: forwards;
+  opacity: 0;
+
+}
+
+
+@keyframes slidein {
+  0% {
+    opacity: 0;
+    bottom: -100px;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    bottom: -4px;
+    opacity: 1;
+  }
+}

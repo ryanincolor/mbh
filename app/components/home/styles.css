@@ -6,10 +6,29 @@
   position: relative;
 }
 
+.fullsite {
+  position: absolute;
+  transform: rotate(-90deg);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 10px;
+  left: -20px;
+  bottom: 64px;
+  color: white;
+  opacity: 0.4;
+}
 
 .header {
   padding: 96px 96px 0;
   z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .header {
+    width: 90%;
+    padding: 48px 0;
+    margin: 0 auto;
+  }
 }
 
 
@@ -56,53 +75,59 @@
   top: 96px;
 }
 
+@media (max-width: 600px) {
+  .hero {
+     height: 500px;  }
+
+  .coverphoto{
+    height: 400px;
+  }
+
+  .featured img {
+    height: 100%;
+  }
+}
+
+
 .featured img {
   width: 100%;
 }
 
-.artistBanner {
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
   position: absolute;
   bottom:-40px;
-  padding: 0 32px;
-  width: 1000px;
-  background: #1A1C24;
-  justify-content: space-between;
-  min-height: 96px;
-  display: flex;
-  align-items: center;
+  z-index: 1;
 }
 
 @media (max-width: 600px) {
-  .artistBanner {
-    width: 100%;
+  .player {
+    width: 90%;
   }
 }
 
-.soundcloudPlayer {
-  position: absolute;
-  width: 1000px;
-  bottom: 50px;
+.artistBanner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 96px;
+  align-items: center;
+  padding: 0 32px;
+  background: #1A1C24;
+  cursor: pointer;
 }
-
-.soundcloudPlayer .widget {
-  border:none !important;
-  box-shadow: none !important;
-}
-
-.soundcloudPlayer .g-background-default {
-    background-color: red;
-  }
 
 .artistBanner:before {
   content: "";
   position: absolute;
   bottom:0px;
-  width: 940px;
-  justify-content: space-between;
+  left:8%;
   min-height: 96px;
-  display: flex;
-  align-items: center;
-  z-index: -1;
+  width: 84%;
+  z-index: -2;
   background: #1A1C24;
   background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
   box-shadow: 0 0 48px 0 #1B1C24, 0 0 32px 0 #1B1C24;
@@ -110,7 +135,7 @@
 
 .artistBannerSubtext {
   position: absolute;
-  bottom:-120px;
+  bottom:-72px;
 }
 
 .artistName {
@@ -121,36 +146,17 @@
 .play {
   width: 0; 
   height: 0; 
-  border-top: 16px solid transparent;
-  border-bottom: 16px solid transparent;
-  border-left: 24px solid white;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 22px solid white;
+  transition: transform 100ms ease;
 }
 
-.about {
-  width: 1000px;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 240px 0 128px;
+.play-active {
+  transform: rotate(-90deg);
 }
 
-.about h2 {
-  font-size: 20px;
-}
 
-.textColumns {
-  display: flex;
-}
-
-.textBlock {
-  font-size: 20px;
-  line-height: 32px;
-  color: #5C5C5C;
-}
-
-.textBlock:first-child {
-  margin-right: 64px;
-}
 
 
 
