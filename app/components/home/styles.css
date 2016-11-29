@@ -1,9 +1,13 @@
 .hero {
   height: 700px;
+  width: 100vw;
   background: #080808;
   display: flex;
   flex-direction: column;
   position: relative;
+  background-image: url('../../assets/images/feature_orphanking.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .fullsite {
@@ -16,6 +20,13 @@
   bottom: 64px;
   color: white;
   opacity: 0.4;
+}
+
+@media (max-width: 600px) {
+  .fullsite {
+    bottom: 128px;
+    left: -28px;
+  }
 }
 
 .header {
@@ -67,12 +78,7 @@
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-}
 
-.coverphoto {
-  width: 500px;
-  position: absolute;
-  top: 96px;
 }
 
 @media (max-width: 600px) {
@@ -97,16 +103,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 75%;
+  width: 100%;
+  padding: 0 5%;
   position: absolute;
-  bottom:-40px;
+  bottom:-116px;
   z-index: 1;
-}
-
-@media (max-width: 600px) {
-  .player {
-    width: 90%;
-  }
 }
 
 .artistBanner {
@@ -118,24 +119,23 @@
   padding: 0 32px;
   background: #1A1C24;
   cursor: pointer;
+  position: relative;
 }
 
 .artistBanner:before {
   content: "";
   position: absolute;
   bottom:0px;
-  left:8%;
-  min-height: 96px;
-  width: 84%;
+  left:6%;
+  height: 48px;
+  width: 88%;
   z-index: -2;
-  background: #1A1C24;
   background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
   box-shadow: 0 0 48px 0 #1B1C24, 0 0 32px 0 #1B1C24;
 }
 
 .artistBannerSubtext {
-  position: absolute;
-  bottom:-72px;
+  padding-top: 24px;
 }
 
 .artistName {

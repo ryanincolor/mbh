@@ -1,7 +1,6 @@
 import React from "react";
 import styles from './styles.css';
 import { Link } from 'react-router';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import classNames from 'classnames/bind';
 
 let cx = classNames.bind(styles);
@@ -36,7 +35,7 @@ class Home extends React.Component {
                 <Link to="/">
                   <img src={require('../../assets/images/logo.svg')} />
                 </Link>
-                <p>Label & design studio.</p>
+                <p>Record Label & Design Studio.</p>
               </div>
               <ul className={styles.social}>
                 <li><a href="https://www.facebook.com/madebyhumann/" target="_blank">FCBK</a></li>
@@ -46,14 +45,11 @@ class Home extends React.Component {
               </ul>
             </div>
             <div className={styles.featured}>
-              <div className={styles.coverphoto}>
-                <img src={require('../../assets/images/feature_orphanking.png')} />
-              </div>
               <div className={styles.player}>
 
                 {this.state.showPlayer ? <SoundCloudPlayer showPlayer={this.state.showPlayer} /> : null}
                 <div className={styles.artistBanner} onClick={this.onClick.bind(this)}>
-                  <span className={styles.artistName}>Orphan King - <span>Affair Ep</span></span>
+                  <span className={styles.artistName}>Orphan King -<span> When Im Alone</span></span>
                   <span className={playClassNames} ></span>
                 </div>
                 <p className={styles.artistBannerSubtext}>Available on <a href="http://soundcloud.com/orphanking">Soundcloud</a></p>

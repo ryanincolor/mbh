@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const precss = require('precss');
 
 exports.devServer = function(options) {
   return {
@@ -36,18 +38,13 @@ exports.setupCSS = function(paths) {
       loaders: [
        {
          test: /\.css$/,
-         loader: 'style-loader'
-        }, 
-        {
-          test: /\.css$/,
-          loader: 'css-loader',
-          query: {
-              modules: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]'
-          }        
+         loaders: ['style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'postcss'],
         }
       ]
     },
+    postcss: function () {
+      return [autoprefixer, precss];
+    }
   };
 }
 

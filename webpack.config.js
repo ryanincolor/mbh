@@ -4,6 +4,7 @@ const validate = require('webpack-validator');
 const merge = require('webpack-merge');
 const parts = require('./libs/parts');
 
+
 const TARGET = process.env.npm_lifecycle_event;
 const pkg = require('./package.json');
 process.env.BABEL_ENV = TARGET;
