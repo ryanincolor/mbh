@@ -33,6 +33,23 @@ const common = {
     new HtmlWebpackPlugin({
       template: require('html-webpack-template'),
       title: 'M A D E b y H U M A N',
+      meta: {
+        description: "Music for Cannibals",
+      },
+      links: [
+        {
+          href: '/apple-touch-icon.png',
+          rel: 'apple-touch-icon',
+          sizes: '180x180'
+        },
+        {
+          href: '/favicon-32x32.png',
+          rel: 'icon',
+          sizes: '32x32',
+          type: 'image/png'
+        }
+      ],
+      mobile: true,
       appMountId: 'root',
       inject: false
     })

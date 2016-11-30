@@ -26,6 +26,7 @@
   .fullsite {
     bottom: 128px;
     left: -28px;
+    display:none;
   }
 }
 
@@ -141,6 +142,12 @@
 .artistName {
   color: white;
   font-size: 24px;
+}
+
+@media (max-width: 600px) {
+  .artistName {
+    font-size: 18px;
+  }
 }
 
 .play {
