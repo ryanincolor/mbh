@@ -1,31 +1,32 @@
 .hero {
-  height: 700px;
+  height: 100vh;
   width: 100vw;
   background: #080808;
   display: flex;
   flex-direction: column;
   position: relative;
-  background-image: url('../../assets/images/feature_orphanking.png');
+  background-image: url('../../assets/images/hero.png');
   background-size: cover;
   background-position: center;
+
+  @media (max-width: 600px) {
+    min-height: 550px;
+  }
 }
 
 .fullsite {
   position: absolute;
   transform: rotate(-90deg);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   font-size: 10px;
-  left: -20px;
-  bottom: 64px;
+  bottom: 120px;
+  left: 0px;
   color: white;
-  opacity: 0.4;
-}
+  opacity: 0.8;
 
-@media (max-width: 600px) {
-  .fullsite {
-    bottom: 128px;
-    left: -28px;
+
+  @media (max-width: 600px) {
     display:none;
   }
 }
@@ -38,7 +39,7 @@
 @media (max-width: 600px) {
   .header {
     width: 90%;
-    padding: 48px 0;
+    padding: 40px 0;
     margin: 0 auto;
   }
 }
@@ -59,6 +60,7 @@
   float: right;
   margin: 0; 
   padding: 0;
+  list-style: none;
 }
 
 .social li {
@@ -82,7 +84,7 @@
 
 }
 
-@media (max-width: 600px) {
+/*@media (max-width: 600px) {
   .hero {
      height: 500px;  }
 
@@ -93,7 +95,7 @@
   .featured img {
     height: 100%;
   }
-}
+}*/
 
 
 .featured img {

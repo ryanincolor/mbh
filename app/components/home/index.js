@@ -29,7 +29,6 @@ class Home extends React.Component {
     return (
       <div className="home">
         <section className={styles.hero}>
-            <p className={styles.fullsite}> Full site soon </p>
             <div className={styles.header}>
               <div className={styles.brand}>
                 <Link to="/">
@@ -38,13 +37,13 @@ class Home extends React.Component {
                 <p>Record Label & Design Studio.</p>
               </div>
               <ul className={styles.social}>
-                <li><a href="https://www.facebook.com/madebyhumann/" target="_blank">FCBK</a></li>
-                <li><a href="https://soundcloud.com/madebyhumanrecords" target="_blank">SNDCLD</a></li>
+                <li><a href="https://www.facebook.com/mbhrecords/" target="_blank">FCBK</a></li>
+                <li><a href="https://soundcloud.com/mbhrecords" target="_blank">SNDCLD</a></li>
                 <li><a href="https://twitter.com/madebyhuman_" target="_blank">TWTR</a></li>
                 <li><a href="mailto:hello@ryanpittman.com">EML</a></li>
               </ul>
             </div>
-            <div className={styles.featured}>
+           {/*  <div className={styles.featured}>
               <div className={styles.player}>
 
                 {this.state.showPlayer ? <SoundCloudPlayer showPlayer={this.state.showPlayer} /> : null}
@@ -52,11 +51,15 @@ class Home extends React.Component {
                   <span className={styles.artistName}>Orphan King -<span> When Im Alone</span></span>
                   <span className={playClassNames} ></span>
                 </div>
-                <p className={styles.artistBannerSubtext}>Available on <a href="http://soundcloud.com/orphanking">Soundcloud</a></p>
-              </div>
+              </div> *
             </div>
+            */}
         </section>
-        <About />
+        <footer>
+          <span> © made by human 2017</span>
+          <span> <a href="mailto:hello@madebyhuman.se">hello@madebyhuman.se</a></span>
+        </footer>
+        <p className={styles.fullsite}> Full site soon </p>
       </div>
     )
   }

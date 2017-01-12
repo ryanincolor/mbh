@@ -7,10 +7,6 @@ class Layout extends React.Component {
     return (
       <div className="app">
         {this.props.children}
-        <footer>
-          <span> © madebyhuman 2016</span>
-          <span> <a href="mailto:hello@madebyhuman.se">hello@madebyhuman.se</a></span>
-        </footer>
       </div>
     );
   }

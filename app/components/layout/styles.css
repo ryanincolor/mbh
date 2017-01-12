@@ -14,20 +14,32 @@ body {
 }
 
 footer {
+  position: absolute;
   display: flex;
+  bottom: 0px;
   justify-content: center;
-  padding: 96px 0;
+  padding: 64px 0;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 }
 
 footer span {
   font-size: 14px;
-  color: #5C5C5C;
-  padding: 0 16px;
+  color: white;
+  padding: 8px 16px;
+  opacity: 0.8;
+
+
+
 }
 
 footer a {
-  color: #5C5C5C;
+  color: white;
 }
 
 @-ms-viewport{
